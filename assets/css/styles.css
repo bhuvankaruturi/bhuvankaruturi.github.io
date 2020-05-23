@@ -1,0 +1,135 @@
+body, html, a {
+  background-color: black;
+  color: white;
+}
+
+#progress-container {
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+  height: 4px;
+  background: #ccc;
+}
+
+#progress-bar {
+  height: 4px;
+  background: #33eb39;
+  width: 0%;
+}
+
+section {
+  padding-top: 2em;
+  padding-bottom: 1em;
+}
+
+.container > h3 {
+  margin-bottom: 0.75em;
+}
+
+.subsection {
+  padding: 1.5em 2.5em;
+  border-radius: 10px;
+}
+
+section .subsection:nth-of-type(odd) {
+  background-color: rgba(199, 198, 198, 0.2);
+}
+
+.skills-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 0;
+  margin: 1em auto;
+  list-style: none;
+  list-style-type: none;
+}
+
+.skills-list > li {
+  padding: 0.25em 1em;
+  margin: 0.25em 0.3em;
+  background-color: rgba(231, 250, 250, 0.6);
+  color: black;
+  border-radius: 16px;
+}
+
+#profile-img {
+  width: 200px;
+  height: 215px;
+  border-radius: 2%;
+  border: 2px solid gray;
+}
+
+#address_list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  list-style: none;
+}
+
+.logo {
+  width: 30px;
+  height: 30px;
+}
+
+.section-heading {
+  width: fit-content;
+  margin: 0.3em 0em;
+}
+
+.section-heading h3 {
+  display: inline;
+  font-size: xx-large;
+  line-height: 1;
+  margin: 0;
+  padding: 1.25rem auto;
+}
+
+.reveal-bar {
+  position: relative;
+  overflow: hidden;
+}
+.reveal-bar h3 {
+  animation: fadeIn 0s 0.6s;
+  animation-fill-mode: backwards;
+}
+.reveal-bar::after {
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: #f0f2f6;
+  transform: translateX(-100%);
+  animation: secondaryImageOverlayIn 0.6s 0s, secondaryImageOverlayOut 0.6s 0.6s;
+  animation-fill-mode: both;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes secondaryImageOverlayIn {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+@keyframes secondaryImageOverlayOut {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */
