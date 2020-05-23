@@ -93,7 +93,7 @@ section {
   border-radius: 10px;
 }
 
-.subsection ul {
+ul {
   padding: 0;
   list-style-type: none;
   list-style: inside;
