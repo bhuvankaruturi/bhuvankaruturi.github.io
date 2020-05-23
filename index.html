@@ -13,14 +13,32 @@
             <div id="progress-bar"></div>
         </div>
         <!-- Header section -->
-        <section id="section_name">
-            <div class="container text-center py-4">
-                <div class="row justify-content-center">
-                    <div class="col-lg-2">
-                        <img id="profile-img" src="./assets/images/profile-img.jpg"/>
+        <section id="section_name" class="row no-gutters align-items-center">
+            <div class="container text-center">
+                <div class="row justify-content-center align-items-center">
+                    <div class="col-lg-3">
+                        <img id="profile-img" src="./assets/images/profile-img-2.jpg"/>
                     </div>
                     <div class="col-lg-7">
-                        <h1 class="mt-2">Bhuvan Prakash Karuturi</h1>
+                        <h1 class="mt-1">Bhuvan Prakash Karuturi</h1>
+                        <p>Software Engineer | Full Stack Web Developer | Graduate Student</p>
+                        <div class="row justify-content-center pb-1">
+                            <span class="col-2">
+                                <a href="https://github.com/bhuvankaruturi">
+                                    <i class="fab fa-github-square fa-lg"></i>
+                                </a>
+                            </span>
+                            <span class="col-2">
+                                <a href="https://www.linkedin.com/in/bhuvan-karuturi">
+                                    <i class="fab fa-linkedin fa-lg" style="color:rgb(14, 72, 233);"></i>
+                                </a>
+                            </span>
+                            <span class="col-2">
+                                <a href="https://twitter.com/bhuvan_karuturi">
+                                    <i class="fab fa-twitter-square fa-lg" style="color: rgba(24, 191, 233, 0.932);"></i>
+                                </a>
+                            </span>
+                        </div>
                     </div>
                 </div>
             <div>
@@ -31,16 +49,16 @@
                 <div class="section-heading">
                     <h3>About Me</h3><br/>
                 </div>
-                <p>A passionate programmer pursuing master of science in computer science at The University of Texas at Dallas.
+                <p class="mt-1">A passionate programmer pursuing Master of Science in Computer Science at The University of Texas at Dallas.
                     <br/>
                     <br/>
-                    I have more than two years of experience working as a senior software engineer with the multi-national IT consulting company Capgemini Technology Services. As a software developer in a team developing customizations to Peoplesoft ERP module, I have developed software packages using variety of technologies like JAVA, peoplecode, SQL, PL/SQL, Oracle BI publisher.
+                    I have more than two years of experience working as a senior software engineer with the multi-national IT consulting company Capgemini Technology Services. As a software developer in a team developing customization to an ERP module, I have developed software packages using variety of languages and technologies like JAVA, SQL, PL/SQL, Oracle BI publisher, XML.
                     <br/>
                     <br/>
-                    I have experience working on both web development and machine learning projects. Having completed full length specialization in these two domains, I have development a few projects such as responsive single web apps using React, Express, Node, trained word level language models using deep learning techniques like LSTM, word embeddings, developed a object detection and localization model using CNN. I am currently working a project to integrate the benfits of a ML model in web application so that it will be available to wider userbase.
+                    I have experience working on web development, application development and machine learning projects. Having completed full length specialization in these domains, I have development a few projects such as responsive single web apps, Relational database management system from scratch, multi-threaded programs in C, kernel level applications, schedulers, training word level language models using deep learning techniques like LSTM, word embeddings, developing a object detection and localization model using CNN.
                     <br/>
                     <br/>
-                    Coming to my hobbies, I like playing cricket, tennis and swimming. I have recently developed the habit of playing squash and wall climbing in my university. I love reading and watching documentaries on historical events and learning about the causes leading to those events.
+                    Regarding my hobbies, I like playing cricket, tennis and swimming. I have recently developed the habit of playing squash and wall climbing at my university. I love reading and watching documentaries on historical events and learning about the causes leading to those events.
                 </p>
             </div>
         </section>
@@ -85,10 +103,10 @@
         <section id="section_exp">
             <div class="container">
                 <div class="section-heading">
-                    <h3>Professional Experience</h3>
+                    <h3>Work Experience</h3>
                 </div>
                 <div class="subsection">
-                    <h4><img class="logo" src="assets/images/utd-logo.jpg"/> The University of Texas at Dallas</h4>
+                    <h5><img class="logo" src="assets/images/utd-logo.jpg"/> The University of Texas at Dallas</h5>
                     <p class="font-italic">Teaching Assistant</p>
                     <ul>
                         <li>Teaching assistant for the senior year operating systems course.</li>
@@ -96,15 +114,15 @@
                     </ul>
                 </div>
                 <div class="subsection">
-                    <h4><img class="logo" src="assets/images/utd-logo.jpg"/> UT Dallas - Center for Education Outreach</h4>
+                    <h5><img class="logo" src="assets/images/utd-logo.jpg"/> UT Dallas - Center for Education Outreach</h5>
                     <p class="font-italic">Coding Instructor</p>
                     <ul>
-                        <li>Taught machine learning and data science concepts such as data preprocessing, data visualization, Image augmentation, Image classification, Transfer Learning using Keras library</li>
-                        <li>Developed Machine learning algorithm along with the student for the Kaggle competition, APTOS 2019 Blindness Detection</li>
+                        <li>Taught machine learning and data science concepts such as data preprocessing, data visualization, Image augmentation, Image classification, Transfer Learning using Keras library.</li>
+                        <li>Developed Machine learning algorithm along with the student for the Kaggle competition, APTOS 2019 Blindness Detection.</li>
                     </ul>
                 </div>
                 <div class="subsection">
-                    <h4><img class="logo" src="assets/images/capgemini-logo.jpg"/> Capgemini Technology Services</h4>
+                    <h5><img class="logo" src="assets/images/capgemini-logo.jpg"/> Capgemini Technology Services</h5>
                     <p class="font-italic">Senior Software Engineer</p>
                     <ul>
                         <li>Developed customizations to ERP module using Java, SQL, XML. Built robust and modular packages that received faster user acceptance.</li>
@@ -122,62 +140,82 @@
                     <h3>Projects</h3>
                 </div>
                 <div class="subsection">
-                    <h4>SocialApp – Social Media Web Application</h4>
+                    <h5>
+                        <a href="https://github.com/bhuvankaruturi/socialapp">
+                            SocialApp – Social Media Web Application <i class="fas fa-link"></i>
+                        </a>
+                    </h5>
                     <ul>
                         <li>Developed a social media application using Firebase cloud services, NodeJS, React.js, Redux, Material-UI.</li>
                         <li>Used SOA, microservices to expand compatibility and to minimize the frontend package size by half and billing costs.</li>
                     </ul>
                 </div>
                 <div class="subsection">
-                    <h4>JavaDB - MySQL like Database using Java</h4>
+                    <h5>
+                        <a href="https://github.com/bhuvankaruturi/JavaDB">
+                            JavaDB - MySQL like Database using Java <i class="fas fa-link"></i>
+                        </a>
+                    </h5>
                     <ul>
                         <li>Built a MySQL like database management system from scratch using Java. Implemented CRUD functionalities.</li>
                         <li>Implemented search optimization by creating indexes using B and B-Plus trees.</li>
                     </ul>
                 </div>
                 <div class="subsection">
-                    <h4>Classroom Management System Using Multithreading (POSIX threads in C)</h4>
+                    <h5>
+                        <a href="https://github.com/bhuvankaruturi/CSMC_POSIX_C">
+                            Classroom Management System Using Multithreading (POSIX threads in C) <i class="fas fa-link"></i>
+                        </a>
+                    </h5>
                     <ul>
-                        <li>Built a mock classroom management system with several student, tutor and coordinator threads to achieve parallelism</li>
+                        <li>Built a mock classroom management system with several student, tutor and coordinator threads to achieve parallelism.</li>
                         <li>Efficiently managed resource allocation and used semaphores, mutex locks to avoid deadlocks.</li>
                     </ul>
                 </div>
                 <div class="subsection">
-                    <h4>ContactList – Full Stack Web Application</h4>
+                    <h5>
+                        <a href="https://github.com/bhuvankaruturi/contact_list">
+                            ContactList – Full Stack Web Application <i class="fas fa-link"></i>
+                        </a>
+                    </h5>
                     <ul>
                         <li>Developed a RESTful web app using Java Spring framework for the backend and jQuery for the frontend.</li>
                         <li>Used the JPA through Hibernate to communicate with the MySQL DB and Spring-web as the Rest-Controller.</li>
                     </ul>
                 </div>
                 <div class="subsection">
-                    <h4>Filesystem Consistency Checker for MIT XV6 Operating System</h4>
+                    <h5>
+                        <a href="https://github.com/bhuvankaruturi/filesystemchecker-xv6">
+                            Filesystem Consistency Checker for MIT XV6 Operating System <i class="fas fa-link"></i>
+                        </a>
+                    </h5>
                     <ul>
                         <li>Built a filesystem consistency checker in C to check for inconsistent state of a filesystem used by xv6 operating system.</li>
-                        <li>Implemented 13 different consistency checks involving inodes, bitmaps, data blocks and directories</li>
+                        <li>Implemented 13 different consistency checks involving inodes, bitmaps, data blocks and directories.</li>
                     </ul>
                 </div>
             </div>
         </section>
         </div>
         <!-- contact section -->
-        <section id="section_contact">
+        <!-- <section id="section_contact">
             <div class="container">
-                <ul id="address_list">
-                    <li>
+                <div class="row justify-content-center text-center">
+                    <span class="col-sm mb-1">
                         <i class="fab fa-github-square fa-lg"></i>
                         <a href="https://github.com/bhuvankaruturi">GitHub</a>
-                    </li>
-                    <li>
+                    </span>
+                    <span class="col-sm mb-1">
                         <i class="fab fa-linkedin fa-lg" style="color:rgb(14, 72, 233);"></i>
                         <a href="https://www.linkedin.com/in/bhuvan-karuturi">LinkedIn</a>
-                    </li>
-                    <li>
+                    </span>
+                    <span class="col-sm mb-1">
                         <i class="fab fa-twitter-square fa-lg" style="color: rgba(24, 191, 233, 0.932);"></i>
                         <a href="https://twitter.com/bhuvan_karuturi">Twitter</a>
-                    </li>
-                </ul>
+                    </span>
+                </div>
             </div>
-        </section>
+        </section> -->
         <!-- js for font-awesome -->
         <script src="https://kit.fontawesome.com/0258a16590.js" crossorigin="anonymous"></script>
         <!-- js for bootstrap -->

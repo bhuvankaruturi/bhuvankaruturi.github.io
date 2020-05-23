@@ -11,7 +11,7 @@ const setObservers = function() {
         root: document.querySelector('#scrollArea'),
         rootMargin: '0px',
     }
-    let threshold = 0.3;
+    let threshold = 0.4;
     const addRevealBar = function(entries) {
         if (entries[0].isIntersecting) {
             entries[0].target.classList.add('reveal-bar');
