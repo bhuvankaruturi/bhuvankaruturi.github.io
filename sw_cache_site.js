@@ -8,7 +8,6 @@ self.addEventListener('install', e => {
 
 // activating the service worker
 self.addEventListener('activate', e => {
-    // console.log("Service worker activated");
     // delete old caches
     e.waitUntil(
         caches.keys().then(cacheNames => {
@@ -26,7 +25,6 @@ self.addEventListener('activate', e => {
 
 // cache the response on a fetch event
 self.addEventListener('fetch', e => {
-    // console.log('Service worker: fetching');
     e.respondWith(
         // browser request to load the page
         fetch(e.request)

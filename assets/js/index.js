@@ -25,15 +25,16 @@ const setObservers = function() {
         root: document.querySelector('#scrollArea'),
         rootMargin: '0px',
     }
-    let threshold = 0.4;
+    let threshold = 0.2;
     const addRevealBar = function(entries) {
-        if (entries[0].isIntersecting) {
-            entries[0].target.classList.add('reveal-bar');
-        } else {
-            entries[0].target.classList.remove('reveal-bar');
+        let sectionHeading = entries[0].target.getElementsByClassName("section-heading")[0];
+        if (entries[0].isIntersecting && sectionHeading) {
+            sectionHeading.classList.add('reveal-bar');
+        } else if (sectionHeading) {
+            sectionHeading.classList.remove('reveal-bar');
         }
     }
-    this.sectionHeadings = document.querySelectorAll('section .section-heading');
+    this.sectionHeadings = document.querySelectorAll('section');
     for (let i = 0; i < sectionHeadings.length; i++) {
         let element = sectionHeadings[i];
         options.threshold = threshold;
