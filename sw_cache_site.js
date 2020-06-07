@@ -1,11 +1,6 @@
 // cache name
 const cachename = "bpkc1"
 
-// installing the service worker
-self.addEventListener('install', e => {
-    // console.log("Service worker installed");
-})
-
 // activating the service worker
 self.addEventListener('activate', e => {
     // delete old caches
@@ -26,20 +21,39 @@ self.addEventListener('activate', e => {
 // cache the response on a fetch event
 self.addEventListener('fetch', e => {
     e.respondWith(
-        // browser request to load the page
-        fetch(e.request)
-            .then(res => {
-                // make a copy of the response
-                const resCopy = res.clone();
-                // open cache
-                caches
-                    .open(cachename)
-                    .then(cache => {
-                        // Add the response copy to cache
-                        cache.put(e.request, resCopy);
-                    });
+        // check the cache if the requested resources are already present
+        caches
+        .match(e.request)
+        .then(res => {
+            // if a match is found return it
+            if (res)
                 return res;
-            })
-            .catch(err => caches.match(e.request).then(res => res))
-    )
-})
+            // else perform a fetch request for the resources
+            return fetchResources(e.request);
+        })
+        .catch(err => fetchResources(e.request))
+    );
+});
+
+const fetchResources = req => {
+    return fetch(req)
+            .then( res => {
+                // check if the response is valid and is not a response to request from third party
+                if (!res || res.status !== 200 || res.type !== 'basic') {
+                    return res;
+                }
+
+                // clone the response as the browser also need to consume the stream
+                var resCopy = res.clone();
+
+                // open the cache and store the response copy
+                caches.open(cachename)
+                    .then(cache => {
+                        cache.put(req, resCopy);
+                    });
+
+                // return the response
+                return res;
+            }
+    );
+}
