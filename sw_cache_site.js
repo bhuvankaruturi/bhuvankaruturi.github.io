@@ -46,7 +46,7 @@ const fetchResources = req => {
                 // clone the response as the browser also need to consume the stream
                 var resCopy = res.clone();
 
-                // open the cache and store the response copy
+                //open the cache and store the response copy
                 caches.open(cachename)
                     .then(cache => {
                         cache.put(req, resCopy);
