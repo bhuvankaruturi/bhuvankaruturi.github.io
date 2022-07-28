@@ -3,6 +3,17 @@ export default {
     "header": "Work Experience",
     "subsections": [
         {
+            "header": "Google LLC",
+            "logo": "assets/images/google-logo.jpg",
+            "location": "Greater Seattle Area, Washington",
+            "subtitle": "Software Engineer",
+            "duration": "January 2022 - Present",
+            "details": [
+                "Software Engineer in the Cloud TPU team.",
+                "Working on bringing the fastest machine learning accelerators to Cloud."
+            ]
+        },
+        {
             "header": "Amazon.com Services LLC",
             "logo": "assets/images/amazon-logo.jpg",
             "location": "Seattle, Washington",
@@ -19,7 +30,7 @@ export default {
             "logo": "assets/images/ohio-at-home-logo.jpg",
             "location": "Columbus, Ohio",
             "subtitle": "Full Stack Web Developer Intern",
-            "duration": "August 2020 - May 2021",
+            "duration": "August 2020 - November 2021",
             "details": [
                 "Developed a full stack web app from scratch with ASP.NET core, XUnit, Angular, Docker and Azure Kubernetes Service.",
                 "Used microservices architecture to achieve service decoupling and faster updates deployment. Used the Kubernetes engine to manage microservices. Deployed an Nginx Ingress Service to balance the load and enable TLS termination.",

@@ -28,19 +28,27 @@ function createCareerEventsSection(header: string, id: string): HTMLElement {
 function addCareerEvent(careerEvent: CareerEvent, container: HTMLElement) {
     if (!container || !careerEvent)
         return;
-    const titleHTML = `<div class="row justify-content-between mb-1">
-        <h5 class="col-sm-9"><img class="logo mr-2" src="${careerEvent.logo}"/>${careerEvent.header}</h5>
-        <p class="col-sm pt-2">${careerEvent.location}</p>
-    </div>`
-    const subtitleHTML = `<div class="row justify-content-between mb-1">
-        <p class="col-sm-9 font-italic my-0 font-weight-bold">${careerEvent.subtitle}</p>
-        <p class="col-sm font-italic my-0">${careerEvent.duration}</p>
+    const titleHTML = `
+        <div><img class="logo mr-3" src="${careerEvent.logo}"/></div>
+        <div class="row flex-fill flex-wrap justify-content-around pt-1">
+            <div class="col-md d-flex flex-column align-items-start justify-content-start title">
+                <p>${careerEvent.header}</p>
+                <p class="font-italic font-weight-bold">${careerEvent.subtitle}</p>
+            </div>
+            <div class="flex-fill"></div>
+            <div class="col-md d-flex flex-column location">
+                <p class="">${careerEvent.location}</p>
+                <p class="font-italic">${careerEvent.duration}</p>
+            </div>
+        </div>`
+    const careerEventHeaderHTML = `<div class="row justify-content-start flex-nowrap align-items-start mb-1 career-event-header">
+        ${titleHTML}
     </div>`
     let detailsHTML = '';
     if (careerEvent.details && careerEvent.details.length > 0) {
         detailsHTML = `<ul>${careerEvent.details.map(detail => `<li>${detail}</li>`).join('')}<//ul>`
     }
-    const subsectionHTML = `<div class="subsection">${titleHTML}${subtitleHTML}${detailsHTML}</div>`;
+    const subsectionHTML = `<div class="subsection">${careerEventHeaderHTML}${detailsHTML}</div>`;
     container.insertAdjacentHTML('beforeend', subsectionHTML);
 }
 

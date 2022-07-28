@@ -1,0 +1,36 @@
+// Sass configuration
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Sass Compile",
+            "type": "shell",
+            "command": "sass assets/sass/styles.scss assets/css/styles.css",
+            "group": "build"
+        },
+        {
+            "type": "typescript",
+            "tsconfig": "../../../G:/web-dev/portfolio/assets/ts/tsconfig.json",
+            "option": "watch",
+            "problemMatcher": [
+                "$tsc-watch"
+            ],
+            "group": "build",
+            "label": "tsc: watch - ../../../G:/web-dev/portfolio/assets/ts/tsconfig.json"
+        },
+        {
+            "type": "typescript",
+            "tsconfig": "assets/ts/tsconfig.json",
+            "problemMatcher": [
+                "$tsc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "label": "tsc: build - assets/ts/tsconfig.json"
+        }
+    ]
+  }
