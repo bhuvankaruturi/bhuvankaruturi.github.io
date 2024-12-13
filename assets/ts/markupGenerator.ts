@@ -1,6 +1,11 @@
-import education from '../data/education';
-import experience from '../data/experience';
+import * as yaml from 'js-yaml'; // Import js-yaml library
 import { CareerEvent } from './types/CareerEvent';
+
+interface Section {
+    id: string;
+    header: string;
+    subsections: CareerEvent[];
+}
 
 function addSectionContainer(id: string): HTMLElement {
     const section = document.getElementById(`section-${id}`);
@@ -52,12 +57,21 @@ function addCareerEvent(careerEvent: CareerEvent, container: HTMLElement) {
     container.insertAdjacentHTML('beforeend', subsectionHTML);
 }
 
-function generateMarkup() {
-    const sections = [education, experience];
+async function fetchAndParseYAML(filePath: string): Promise<Section> {
+    const response = await fetch(filePath);
+    const yamlText = await response.text();
+    return yaml.load(yamlText) as Section;
+}
+
+async function generateMarkup() {
+    const educationData = await fetchAndParseYAML('assets/data/education.yaml');
+    const experienceData = await fetchAndParseYAML('assets/data/experience.yaml');
+
+    const sections = [educationData, experienceData];
     for (const section of sections) {
         const container = createCareerEventsSection(section.header, section.id);
         for (const subsection of section.subsections) {
-            addCareerEvent(subsection as CareerEvent, container);
+            addCareerEvent(subsection, container);
         }
     }
 }
