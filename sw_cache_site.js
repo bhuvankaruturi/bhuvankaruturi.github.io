@@ -1,5 +1,5 @@
 // cache name
-const cachename = "bpkc3"
+const cachename = "bpkc4"
 
 // activating the service worker
 self.addEventListener('activate', e => {
