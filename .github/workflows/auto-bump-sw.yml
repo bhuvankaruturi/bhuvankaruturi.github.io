@@ -1,0 +1,40 @@
+name: Auto Bump Service Worker Cache
+
+on:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - 'sw_cache_site.js'
+      - 'package.json'
+      - 'package-lock.json'
+
+jobs:
+  bump-version:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Git Config
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+
+      - name: Bump version and update SW
+        run: |
+          npm run bump
+
+      - name: Commit and push changes
+        run: |
+          git add package.json sw_cache_site.js
+          git commit -m "chore: auto-bump service worker cache [skip ci]"
+          git push
