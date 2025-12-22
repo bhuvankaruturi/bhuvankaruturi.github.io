@@ -1,5 +1,5 @@
 // Cache name - increment this when you update your site assets
-const cachename = "bpkc-1.0.1";
+const cachename = "bpkc-1.0.2";
 
 // Assets to pre-cache
 const assetsToCache = [
