@@ -3,7 +3,7 @@ name: Auto Bump Service Worker Cache
 on:
   push:
     branches:
-      - main
+      - master
     paths-ignore:
       - 'sw_cache_site.js'
       - 'package.json'
