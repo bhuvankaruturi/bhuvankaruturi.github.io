@@ -42,9 +42,12 @@ sections.forEach(section => revealObserver.observe(section));
 // the section nearest the middle of the viewport highlighted (F11)
 const nav = document.getElementById('site-nav');
 const hero = document.getElementById('hero');
+const scrollCue = document.querySelector('.scroll-cue');
 
 new IntersectionObserver(entries => {
-    nav.classList.toggle('visible', !entries[0].isIntersecting);
+    const heroVisible = entries[0].isIntersecting;
+    nav.classList.toggle('visible', !heroVisible);
+    scrollCue.classList.toggle('hidden', !heroVisible);
 }, { threshold: 0.15 }).observe(hero);
 
 const navObserver = new IntersectionObserver(entries => {
