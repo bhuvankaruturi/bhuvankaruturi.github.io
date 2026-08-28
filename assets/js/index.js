@@ -12,19 +12,27 @@ if ('serviceWorker' in navigator) {
 
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-// scroll progress bar (rAF-throttled)
+// scroll progress bar and About cue visibility (rAF-throttled)
 const progressBar = document.getElementById('progress-bar');
+const scrollCue = document.querySelector('.scroll-cue');
+const onScroll = () => {
+    const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    progressBar.style.width = height > 0 ? `${(scrollTop / height) * 100}%` : '0%';
+    // the cue only invites the first scroll; gone as soon as the visitor moves
+    scrollCue.classList.toggle('hidden', scrollTop > 40);
+};
 let progressTicking = false;
 window.addEventListener('scroll', () => {
     if (progressTicking) return;
     progressTicking = true;
     requestAnimationFrame(() => {
-        const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-        progressBar.style.width = height > 0 ? `${(scrollTop / height) * 100}%` : '0%';
+        onScroll();
         progressTicking = false;
     });
 }, { passive: true });
+onScroll();
+scrollCue.addEventListener('click', () => scrollCue.classList.add('hidden'));
 
 const sections = document.querySelectorAll('main section[id]');
 
@@ -42,12 +50,9 @@ sections.forEach(section => revealObserver.observe(section));
 // the section nearest the middle of the viewport highlighted (F11)
 const nav = document.getElementById('site-nav');
 const hero = document.getElementById('hero');
-const scrollCue = document.querySelector('.scroll-cue');
 
 new IntersectionObserver(entries => {
-    const heroVisible = entries[0].isIntersecting;
-    nav.classList.toggle('visible', !heroVisible);
-    scrollCue.classList.toggle('hidden', !heroVisible);
+    nav.classList.toggle('visible', !entries[entries.length - 1].isIntersecting);
 }, { threshold: 0.15 }).observe(hero);
 
 const navObserver = new IntersectionObserver(entries => {
