@@ -3,10 +3,11 @@
   "scripts": {
     "start": "npm run build && npx serve .",
     "dev": "npm run start",
-    "build": "node tools/update-sw-version.js",
+    "render": "node tools/render-content.js",
+    "build": "npm run render && node tools/update-sw-version.js",
     "bump": "npm version patch && npm run build"
   },
-  "dependencies": {
-    "@types/js-yaml": "^4.0.9"
+  "devDependencies": {
+    "js-yaml": "^4.1.0"
   }
 }

@@ -1,76 +1,83 @@
-// Cache name - increment this when you update your site assets
+// Cache name — bumped automatically by tools/update-sw-version.js in CI
 const cachename = "bpkc-1.0.2";
 
-// Assets to pre-cache
+// Core assets to pre-cache
 const assetsToCache = [
     '/',
     '/index.html',
+    '/404.html',
     '/assets/css/styles.css',
     '/assets/js/index.js',
-    '/assets/js/main.js',
-    '/assets/js/app/markupGenerator.js',
-    '/assets/data/experience.yaml',
-    '/assets/data/education.yaml',
-    'https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css',
+    '/assets/images/profile-img.webp',
+    '/assets/images/google-logo.jpg',
+    '/assets/images/amazon-logo.jpg',
+    '/assets/images/ohio-at-home-logo.jpg',
+    '/assets/images/capgemini-logo.jpg',
+    '/assets/images/utd-logo.jpg',
+    '/assets/images/anu.png',
     'https://fonts.googleapis.com/css2?family=Libre+Franklin:ital@0;1&family=Lobster&display=swap'
 ];
 
-// Installing the service worker and pre-caching assets
 self.addEventListener('install', e => {
-    console.log('Service Worker: Installing...');
     e.waitUntil(
-        caches.open(cachename).then(cache => {
-            console.log('Service Worker: Pre-caching core assets');
-            return cache.addAll(assetsToCache);
-        }).then(() => self.skipWaiting())
+        caches.open(cachename)
+            .then(cache => cache.addAll(assetsToCache))
+            .then(() => self.skipWaiting())
     );
 });
 
-// Activating the service worker and clearing old caches
 self.addEventListener('activate', e => {
-    console.log('Service Worker: Activating...');
     e.waitUntil(
-        caches.keys().then(cacheNames => {
-            return Promise.all(
-                cacheNames.map(cache => {
-                    if (cache !== cachename) {
-                        console.log('Service Worker: Clearing old cache:', cache);
-                        return caches.delete(cache);
-                    }
-                })
-            );
-        }).then(() => self.clients.claim())
+        caches.keys().then(cacheNames => Promise.all(
+            cacheNames.map(cache => cache !== cachename ? caches.delete(cache) : undefined)
+        )).then(() => self.clients.claim())
     );
 });
 
-// Cache falling back to network strategy with dynamic caching
+const putInCache = (request, response) => {
+    const copy = response.clone();
+    caches.open(cachename).then(cache => cache.put(request, copy));
+};
+
+// Network-first for pages: visitors always get fresh HTML when online,
+// the cached copy (or cached index.html) when offline (F9)
+const handleNavigation = request =>
+    fetch(request)
+        .then(response => {
+            if (response && response.status === 200) putInCache(request, response);
+            return response;
+        })
+        .catch(() =>
+            caches.match(request).then(cached => cached || caches.match('/index.html'))
+        );
+
+// Cache-first for same-origin static assets (invalidated by the cache-name
+// bump on deploy); stale-while-revalidate for cross-origin resources such
+// as the Google Fonts stylesheet
+const fetchAndCache = request =>
+    fetch(request).then(response => {
+        if (response && response.status === 200) putInCache(request, response);
+        return response;
+    });
+
+const handleAsset = (request, revalidate) =>
+    caches.match(request).then(cached => {
+        if (cached) {
+            if (revalidate) fetchAndCache(request).catch(() => { });
+            return cached;
+        }
+        return fetchAndCache(request);
+    });
+
 self.addEventListener('fetch', e => {
-    // Skip non-GET requests
     if (e.request.method !== 'GET') return;
 
-    e.respondWith(
-        caches.match(e.request).then(cachedResponse => {
-            if (cachedResponse) {
-                return cachedResponse;
-            }
+    const url = new URL(e.request.url);
 
-            // If not in cache, fetch from network and cache for next time
-            return fetch(e.request).then(networkResponse => {
-                // Check if we received a valid response
-                if (!networkResponse || networkResponse.status !== 200) {
-                    return networkResponse;
-                }
+    if (e.request.mode === 'navigate' || url.pathname.endsWith('.html')) {
+        e.respondWith(handleNavigation(e.request));
+        return;
+    }
 
-                // Clone the response to store in cache
-                const responseToCache = networkResponse.clone();
-                caches.open(cachename).then(cache => {
-                    cache.put(e.request, responseToCache);
-                });
-
-                return networkResponse;
-            }).catch(() => {
-                // Return a fallback if both fail (optional, e.g., offline page)
-            });
-        })
-    );
+    e.respondWith(handleAsset(e.request, url.origin !== self.location.origin));
 });

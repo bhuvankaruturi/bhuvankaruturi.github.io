@@ -7,14 +7,17 @@ subsections:
     subtitle: Senior Software Engineer
     duration: Jan 2022 – Present
     details:
-      - Software engineer responsible for researching, designing and developing software components for the Google Cloud TPU product.
-      - Areas of responsibilities include the TPU NPI, TPU compiler and runtime stack, TPU virtualization stack, TPU guest environment and end-to-end system benchmarking/profiling.
-      - TL for Cloud TPU7 and TPU v5p NPIs. Made significant contributions to the other TPU launches and creation of TPU compiler/runtime SDK. Designed and developed a novel simulation system to accelerate TPU NPIs.
+      # TODO(bhuvan): add publishable numbers where possible (bring-up time saved,
+      # benchmark coverage, launches shipped) — one metric per bullet lands best.
+      - Tech lead for the Cloud TPU7 and TPU v5p new-product introductions, and contributor to several other TPU launches.
+      - Designed and built a novel simulation system that accelerated TPU new-product introductions.
+      - Develop the Cloud TPU compiler and runtime stack, virtualization stack, guest environment, and the TPU compiler/runtime SDK.
+      - Own end-to-end system benchmarking and profiling for the Cloud TPU product.
   - header: Amazon.com Services LLC
     logo: assets/images/amazon-logo.jpg
     location: Seattle, WA
     subtitle: Software Development Engineer Intern
-    duration: May 2021 – Present
+    duration: May 2021 – Aug 2021
     details:
       - Developed an ML-based system to classify fraudulent transactions based on features derived from 4 different systems. Gained experience of working with terabyte-scale data in various data stores such as RedShift, DynamoDB.
       - Trained an ML model which demonstrated the ability to reduce the labor costs for manual review by 73%.

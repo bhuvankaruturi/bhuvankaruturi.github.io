@@ -16,3 +16,6 @@ npm-debug.log*
 # OS generated files
 .DS_Store
 Thumbs.db
+
+# Local copy of Claude cowork review (not for publishing)
+cowork-review-2026-08-27.html
