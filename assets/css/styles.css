@@ -564,6 +564,7 @@ footer {
     padding: 1.5rem 0 2rem;
     color: var(--muted);
     font-size: 0.85rem;
+    text-align: center;
 }
 
 footer p {
