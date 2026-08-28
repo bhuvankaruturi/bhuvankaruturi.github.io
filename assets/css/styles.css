@@ -572,6 +572,19 @@ footer p {
 
 /* ---------- small screens ---------- */
 @media (max-width: 640px) {
+    #site-nav {
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    #site-nav a {
+        font-size: 0.85rem;
+        padding: 0.5rem 0.55rem;
+        white-space: nowrap;
+    }
+
     section {
         padding: 1.75rem 0;
     }
