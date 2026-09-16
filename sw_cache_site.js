@@ -1,5 +1,5 @@
 // Cache name — bumped automatically by tools/update-sw-version.js in CI
-const cachename = "bpkc-1.0.3";
+const cachename = "bpkc-1.0.4";
 
 // Core assets to pre-cache
 const assetsToCache = [
