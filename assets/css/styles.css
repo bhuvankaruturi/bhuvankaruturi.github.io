@@ -219,8 +219,7 @@ section {
     color: #f3846e;
 }
 
-.social-link.gh,
-.social-link.x {
+.social-link.gh {
     color: var(--ink);
 }
 
