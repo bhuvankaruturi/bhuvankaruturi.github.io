@@ -1,5 +1,5 @@
 // Progressive enhancement for the portfolio page: service worker, scroll
-// progress, heading reveals, sticky nav state, hero peek, resume link.
+// progress, heading reveals, sticky nav state, hero peek.
 
 // service worker for offline support
 if ('serviceWorker' in navigator) {
@@ -74,11 +74,3 @@ if (!prefersReducedMotion) {
         }
     }, 2500);
 }
-
-// resume links stay hidden until assets/resume.pdf actually exists
-fetch('assets/resume.pdf', { method: 'HEAD' })
-    .then(response => {
-        if (!response.ok) return;
-        document.querySelectorAll('.resume-link').forEach(link => link.hidden = false);
-    })
-    .catch(() => { /* keep hidden */ });

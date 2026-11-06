@@ -79,7 +79,7 @@
         <a href="#experience">Experience</a>
         <a href="#education">Education</a>
         <a href="#projects">Projects</a>
-        <a href="assets/resume.pdf" class="resume-link" hidden>Résumé</a>
+        <a href="assets/resume.pdf" class="resume-link">Résumé</a>
     </nav>
 
     <!-- floating scroll cue; hidden by JS once the hero scrolls past -->
@@ -136,7 +136,7 @@
                             </li>
                         </ul>
                         <div class="cta-row">
-                            <a class="btn btn-primary resume-link" href="assets/resume.pdf" hidden>
+                            <a class="btn btn-primary resume-link" href="assets/resume.pdf">
                                 <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor"
                                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                                     <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
@@ -168,55 +168,58 @@
                 </div>
             </section>
 
-            <!-- skills -->
+            <!-- skills: generated from assets/data/skills.yaml — edit the YAML, then run "npm run build" -->
             <section id="skills">
                 <div class="container">
+                    <!-- BEGIN GENERATED skills -->
                     <div class="section-heading">
                         <h2>Skills</h2>
                     </div>
                     <div class="subsection card">
-                        <h3>ML Infrastructure &amp; Platforms</h3>
+                        <h3>ML Infrastructure &amp; Accelerators</h3>
                         <ul class="skills-list">
-                            <li>Accelerated Computing</li>
-                            <li>ML Compilers &amp; Runtimes</li>
+                            <li>Cloud TPUs</li>
+                            <li>ML Compilers &amp; Runtimes (libtpu)</li>
+                            <li>JAX</li>
+                            <li>PyTorch</li>
                             <li>HW-SW Co-design</li>
-                            <li>Systems Performance &amp; Profiling</li>
-                            <li>Virtualization &amp; Guest Environments</li>
-                            <li>System Benchmarking</li>
+                            <li>Pre-Silicon Simulation</li>
                         </ul>
                     </div>
                     <div class="subsection card">
-                        <h3>Systems &amp; Backend</h3>
+                        <h3>Systems &amp; Virtualization</h3>
                         <ul class="skills-list">
                             <li>Distributed Systems</li>
-                            <li>Operating Systems</li>
+                            <li>Virtualization &amp; vIOMMU</li>
+                            <li>NUMA &amp; PCIe Architecture</li>
                             <li>Linux Kernel &amp; Internals</li>
-                            <li>REST &amp; GraphQL</li>
-                            <li>Node.js &amp; Express.js</li>
-                            <li>BigQuery &amp; SQL</li>
+                            <li>Operating Systems</li>
+                            <li>Performance Profiling &amp; Benchmarking</li>
                         </ul>
                     </div>
                     <div class="subsection card">
                         <h3>Languages</h3>
                         <ul class="skills-list">
                             <li>C++</li>
-                            <li>Go</li>
                             <li>Python</li>
+                            <li>Go</li>
                             <li>Java</li>
+                            <li>SQL</li>
                             <li>JavaScript / TypeScript</li>
                         </ul>
                     </div>
                     <div class="subsection card">
-                        <h3>Tools &amp; DevOps</h3>
+                        <h3>Cloud &amp; Infrastructure Tools</h3>
                         <ul class="skills-list">
-                            <li>Kubernetes</li>
+                            <li>Kubernetes (GKE)</li>
+                            <li>Google Compute Engine (GCE)</li>
                             <li>Docker</li>
-                            <li>CI/CD</li>
+                            <li>CI/CD &amp; Release Engineering</li>
+                            <li>BigQuery</li>
                             <li>Git &amp; GitHub</li>
-                            <li>Angular &amp; React</li>
-                            <li>Redux</li>
                         </ul>
                     </div>
+                    <!-- END GENERATED skills -->
                 </div>
             </section>
 
@@ -240,10 +243,11 @@
                     </div>
                 </div>
                 <ul class="details">
-                    <li>Tech lead for the Cloud TPU7 and TPU v5p new-product introductions, and contributor to several other TPU launches.</li>
-                    <li>Designed and built a novel simulation system that accelerated TPU new-product introductions.</li>
-                    <li>Develop the Cloud TPU compiler and runtime stack, virtualization stack, guest environment, and the TPU compiler/runtime SDK.</li>
-                    <li>Own end-to-end system benchmarking and profiling for the Cloud TPU product.</li>
+                    <li>Led end-to-end system design and execution for multiple next-generation Cloud TPU New Product Introductions (including TPU7 and TPU v5p), delivering compute engine stack turnup 3 months ahead of hardware availability and pulling in the development schedule by 4 weeks.</li>
+                    <li>Co-led a year-long cross-organizational initiative (10 teams across 5 departments) to architect and deliver a distributed Cloud TPU Pod Simulator, accelerating cloud hardware development lifecycles by 6+ months prior to silicon availability.</li>
+                    <li>Directed ML compiler and runtime (libtpu) SDK integration for tier-1 AI/LLM research customers; designed and delivered a runtime SDK within 2 months that enabled accelerator sub-slicing for large-scale inference workloads.</li>
+                    <li>Increased ML model training performance by 30% on Cloud TPU instances by resolving virtualization (vIOMMU) degradation, implementing static hugepages, and optimizing multi-PCIe root and NUMA configurations to eliminate non-local memory access.</li>
+                    <li>Drove alignment across networking, kernel, and ML framework teams to resolve systemic performance bottlenecks, establish disaggregated serving network benchmarks, and streamline the JAX stable stack and PyPI release pipeline.</li>
                 </ul>
             </article>
             <article class="subsection card">
@@ -338,16 +342,16 @@
                 </div>
             </section>
 
-            <!-- projects -->
+            <!-- projects: generated from assets/data/projects.yaml — edit the YAML, then run "npm run build" -->
             <section id="projects">
                 <div class="container">
+                    <!-- BEGIN GENERATED projects -->
                     <div class="section-heading">
                         <h2>Earlier Projects</h2>
                     </div>
                     <div class="subsection card">
                         <h3>
-                            <a href="https://github.com/bhuvankaruturi/JavaDB" target="_blank"
-                                rel="noopener noreferrer">
+                            <a href="https://github.com/bhuvankaruturi/JavaDB" target="_blank" rel="noopener noreferrer">
                                 JavaDB — MySQL-like Database in Java
                                 <svg class="link-icon" viewBox="0 0 24 24" width="16" height="16" fill="none"
                                     stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -358,15 +362,13 @@
                             </a>
                         </h3>
                         <ul class="details">
-                            <li>Built a MySQL-like database management system from scratch in Java, implementing full
-                                CRUD functionality.</li>
+                            <li>Built a MySQL-like database management system from scratch in Java, implementing full CRUD functionality.</li>
                             <li>Implemented search optimization by creating indexes using B and B+ trees.</li>
                         </ul>
                     </div>
                     <div class="subsection card">
                         <h3>
-                            <a href="https://github.com/bhuvankaruturi/filesystemchecker-xv6" target="_blank"
-                                rel="noopener noreferrer">
+                            <a href="https://github.com/bhuvankaruturi/filesystemchecker-xv6" target="_blank" rel="noopener noreferrer">
                                 Filesystem Consistency Checker for MIT xv6
                                 <svg class="link-icon" viewBox="0 0 24 24" width="16" height="16" fill="none"
                                     stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -377,16 +379,13 @@
                             </a>
                         </h3>
                         <ul class="details">
-                            <li>Built a filesystem consistency checker in C for the filesystem used by the xv6 operating
-                                system.</li>
-                            <li>Implemented 13 different consistency checks involving inodes, bitmaps, data blocks, and
-                                directories.</li>
+                            <li>Built a filesystem consistency checker in C for the filesystem used by the xv6 operating system.</li>
+                            <li>Implemented 13 different consistency checks involving inodes, bitmaps, data blocks, and directories.</li>
                         </ul>
                     </div>
                     <div class="subsection card">
                         <h3>
-                            <a href="https://github.com/bhuvankaruturi/CSMC_POSIX_C" target="_blank"
-                                rel="noopener noreferrer">
+                            <a href="https://github.com/bhuvankaruturi/CSMC_POSIX_C" target="_blank" rel="noopener noreferrer">
                                 Classroom Management with POSIX Threads in C
                                 <svg class="link-icon" viewBox="0 0 24 24" width="16" height="16" fill="none"
                                     stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -397,8 +396,7 @@
                             </a>
                         </h3>
                         <ul class="details">
-                            <li>Built a mock classroom management system with student, tutor, and coordinator threads to
-                                achieve parallelism.</li>
+                            <li>Built a mock classroom management system with student, tutor, and coordinator threads to achieve parallelism.</li>
                             <li>Managed resource allocation with semaphores and mutex locks to avoid deadlocks.</li>
                         </ul>
                     </div>
@@ -408,38 +406,29 @@
                         </summary>
                         <div class="subsection-inner">
                             <h4>
-                                <a href="https://github.com/bhuvankaruturi/socialapp" target="_blank"
-                                    rel="noopener noreferrer">SocialApp — Social Media Web Application</a>
+                                <a href="https://github.com/bhuvankaruturi/socialapp" target="_blank" rel="noopener noreferrer">SocialApp — Social Media Web Application</a>
                             </h4>
                             <ul class="details">
-                                <li>Developed a social media application using Firebase cloud services, Node.js,
-                                    React, Redux, and Material-UI.</li>
-                                <li>Used SOA and microservices to expand compatibility and to halve the frontend
-                                    package size and billing costs.</li>
+                                <li>Developed a social media application using Firebase cloud services, Node.js, React, Redux, and Material-UI.</li>
+                                <li>Used SOA and microservices to expand compatibility and to halve the frontend package size and billing costs.</li>
                             </ul>
                             <h4>
-                                <a href="https://github.com/bhuvankaruturi/contact_list" target="_blank"
-                                    rel="noopener noreferrer">ContactList — Full Stack Web Application</a>
+                                <a href="https://github.com/bhuvankaruturi/contact_list" target="_blank" rel="noopener noreferrer">ContactList — Full Stack Web Application</a>
                             </h4>
                             <ul class="details">
                                 <li>Developed a RESTful web app with a Java Spring backend and a jQuery frontend.</li>
-                                <li>Used JPA through Hibernate to communicate with MySQL and Spring Web as the REST
-                                    controller.</li>
+                                <li>Used JPA through Hibernate to communicate with MySQL and Spring Web as the REST controller.</li>
                             </ul>
                             <ul class="projects-list">
-                                <li><a href="https://github.com/bhuvankaruturi/snake-game-js" target="_blank"
-                                        rel="noopener noreferrer">Online Snake Game</a></li>
-                                <li><a href="https://github.com/bhuvankaruturi/corona-dashboard" target="_blank"
-                                        rel="noopener noreferrer">COVID-19 Dashboard for USA</a></li>
-                                <li><a href="https://github.com/bhuvankaruturi/CO2-Dashboard-D3" target="_blank"
-                                        rel="noopener noreferrer">CO2 Emission Dashboard</a></li>
-                                <li><a href="https://github.com/bhuvankaruturi/retail-store" target="_blank"
-                                        rel="noopener noreferrer">Retail Store</a></li>
-                                <li><a href="https://github.com/bhuvankaruturi/YelpCamp" target="_blank"
-                                        rel="noopener noreferrer">YelpCamp — Camping Site</a></li>
+                                <li><a href="https://github.com/bhuvankaruturi/snake-game-js" target="_blank" rel="noopener noreferrer">Online Snake Game</a></li>
+                                <li><a href="https://github.com/bhuvankaruturi/corona-dashboard" target="_blank" rel="noopener noreferrer">COVID-19 Dashboard for USA</a></li>
+                                <li><a href="https://github.com/bhuvankaruturi/CO2-Dashboard-D3" target="_blank" rel="noopener noreferrer">CO2 Emission Dashboard</a></li>
+                                <li><a href="https://github.com/bhuvankaruturi/retail-store" target="_blank" rel="noopener noreferrer">Retail Store</a></li>
+                                <li><a href="https://github.com/bhuvankaruturi/YelpCamp" target="_blank" rel="noopener noreferrer">YelpCamp — Camping Site</a></li>
                             </ul>
                         </div>
                     </details>
+                    <!-- END GENERATED projects -->
                 </div>
             </section>
         </main>

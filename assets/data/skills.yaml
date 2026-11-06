@@ -1,0 +1,35 @@
+id: skills
+header: Skills
+subsections:
+  - header: ML Infrastructure & Accelerators
+    items:
+      - Cloud TPUs
+      - ML Compilers & Runtimes (libtpu)
+      - JAX
+      - PyTorch
+      - HW-SW Co-design
+      - Pre-Silicon Simulation
+  - header: Systems & Virtualization
+    items:
+      - Distributed Systems
+      - Virtualization & vIOMMU
+      - NUMA & PCIe Architecture
+      - Linux Kernel & Internals
+      - Operating Systems
+      - Performance Profiling & Benchmarking
+  - header: Languages
+    items:
+      - C++
+      - Python
+      - Go
+      - Java
+      - SQL
+      - JavaScript / TypeScript
+  - header: Cloud & Infrastructure Tools
+    items:
+      - Kubernetes (GKE)
+      - Google Compute Engine (GCE)
+      - Docker
+      - CI/CD & Release Engineering
+      - BigQuery
+      - Git & GitHub

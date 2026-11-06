@@ -7,12 +7,11 @@ subsections:
     subtitle: Senior Software Engineer
     duration: Jan 2022 – Present
     details:
-      # TODO(bhuvan): add publishable numbers where possible (bring-up time saved,
-      # benchmark coverage, launches shipped) — one metric per bullet lands best.
-      - Tech lead for the Cloud TPU7 and TPU v5p new-product introductions, and contributor to several other TPU launches.
-      - Designed and built a novel simulation system that accelerated TPU new-product introductions.
-      - Develop the Cloud TPU compiler and runtime stack, virtualization stack, guest environment, and the TPU compiler/runtime SDK.
-      - Own end-to-end system benchmarking and profiling for the Cloud TPU product.
+      - Led end-to-end system design and execution for multiple next-generation Cloud TPU New Product Introductions (including TPU7 and TPU v5p), delivering compute engine stack turnup 3 months ahead of hardware availability and pulling in the development schedule by 4 weeks.
+      - Co-led a year-long cross-organizational initiative (10 teams across 5 departments) to architect and deliver a distributed Cloud TPU Pod Simulator, accelerating cloud hardware development lifecycles by 6+ months prior to silicon availability.
+      - Directed ML compiler and runtime (libtpu) SDK integration for tier-1 AI/LLM research customers; designed and delivered a runtime SDK within 2 months that enabled accelerator sub-slicing for large-scale inference workloads.
+      - Increased ML model training performance by 30% on Cloud TPU instances by resolving virtualization (vIOMMU) degradation, implementing static hugepages, and optimizing multi-PCIe root and NUMA configurations to eliminate non-local memory access.
+      - Drove alignment across networking, kernel, and ML framework teams to resolve systemic performance bottlenecks, establish disaggregated serving network benchmarks, and streamline the JAX stable stack and PyPI release pipeline.
   - header: Amazon.com Services LLC
     logo: assets/images/amazon-logo.jpg
     location: Seattle, WA

@@ -1,0 +1,42 @@
+id: projects
+header: Earlier Projects
+subsections:
+  - header: JavaDB — MySQL-like Database in Java
+    url: https://github.com/bhuvankaruturi/JavaDB
+    details:
+      - Built a MySQL-like database management system from scratch in Java, implementing full CRUD functionality.
+      - Implemented search optimization by creating indexes using B and B+ trees.
+  - header: Filesystem Consistency Checker for MIT xv6
+    url: https://github.com/bhuvankaruturi/filesystemchecker-xv6
+    details:
+      - Built a filesystem consistency checker in C for the filesystem used by the xv6 operating system.
+      - Implemented 13 different consistency checks involving inodes, bitmaps, data blocks, and directories.
+  - header: Classroom Management with POSIX Threads in C
+    url: https://github.com/bhuvankaruturi/CSMC_POSIX_C
+    details:
+      - Built a mock classroom management system with student, tutor, and coordinator threads to achieve parallelism.
+      - Managed resource allocation with semaphores and mutex locks to avoid deadlocks.
+more_projects:
+  header: More web projects
+  featured:
+    - header: SocialApp — Social Media Web Application
+      url: https://github.com/bhuvankaruturi/socialapp
+      details:
+        - Developed a social media application using Firebase cloud services, Node.js, React, Redux, and Material-UI.
+        - Used SOA and microservices to expand compatibility and to halve the frontend package size and billing costs.
+    - header: ContactList — Full Stack Web Application
+      url: https://github.com/bhuvankaruturi/contact_list
+      details:
+        - Developed a RESTful web app with a Java Spring backend and a jQuery frontend.
+        - Used JPA through Hibernate to communicate with MySQL and Spring Web as the REST controller.
+  links:
+    - header: Online Snake Game
+      url: https://github.com/bhuvankaruturi/snake-game-js
+    - header: COVID-19 Dashboard for USA
+      url: https://github.com/bhuvankaruturi/corona-dashboard
+    - header: CO2 Emission Dashboard
+      url: https://github.com/bhuvankaruturi/CO2-Dashboard-D3
+    - header: Retail Store
+      url: https://github.com/bhuvankaruturi/retail-store
+    - header: YelpCamp — Camping Site
+      url: https://github.com/bhuvankaruturi/YelpCamp
